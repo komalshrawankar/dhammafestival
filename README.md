@@ -25,4 +25,11 @@ Currently, two official plugins are available:
 Apps Script नाव, दहा अंकी मोबाईल क्रमांक, होय/नाही उत्तर आणि अभिप्राय तपासतो. मोबाईल क्रमांक गोळा करण्यापूर्वी तुमच्या गोपनीयता धोरणात याचा उल्लेख करा.
 
 `.env.local` मध्ये URL जोडल्यानंतरही फॉर्म जोडला नसेल तर Apps Script मध्ये नवीन deployment तयार करून नवीन `/exec` URL `.env.local` मध्ये ठेवा.
+
+## Vercel वर प्रकाशित करणे
+
+1. GitHub वरील repository Vercel मध्ये **Add New → Project** वापरून import करा.
+2. **Root Directory** repository च्या root वर ठेवा. `vercel.json` मधील सेटिंग्ज `npm run build` चालवून `dist` प्रकाशित करतील.
+3. Google Sheets feedback form वापरत असल्यास Vercel project च्या **Settings → Environment Variables** मध्ये `VITE_GOOGLE_SHEETS_WEB_APP_URL` जोडा. `.env.local` Git मध्ये जोडू नका.
+4. **Deploy** निवडा. बदल push केल्यानंतर Vercel आपोआप पुन्हा deploy करेल; गरज असल्यास **Deployments → Redeploy** वापरा.
 # dhammafestival
