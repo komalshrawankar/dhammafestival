@@ -19,11 +19,12 @@
   background: rgba(255, 255, 255, 0.92);
   box-shadow: 0 5px 20px rgba(20, 63, 91, 0.07);
   backdrop-filter: blur(14px);
+  font-family: Inter, 'Noto Sans Devanagari', sans-serif;
 }
 
 .site-nav-brand {
   color: #123b5a;
-  font-size: 16px;
+  font-size: 21px;
   font-weight: 800;
   text-decoration: none;
   white-space: nowrap;
@@ -43,7 +44,7 @@
   position: relative;
   padding: 9px 0;
   color: #315a73;
-  font-size: 14px;
+  font-size: 19px;
   font-weight: 700;
   text-decoration: none;
   transition: color 160ms ease;
@@ -118,18 +119,40 @@
 
 .event-poster:first-child {
   border-radius: 50px;
+  object-position: left center;
 }
 
 .festival-caption {
-  margin: clamp(22px, 3vw, 36px) 16px clamp(18px, 2.5vw, 28px);
+  width: min(100% - 40px, 1000px);
+  margin: clamp(22px, 3vw, 36px) auto clamp(18px, 2.5vw, 28px);
+  padding: clamp(22px, 4vw, 38px) clamp(18px, 4vw, 42px);
+  border: 1px solid rgba(33, 111, 148, 0.14);
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(220, 241, 248, 0.72), transparent 70%),
+    #f8fbfc;
+  box-shadow: 0 14px 36px rgba(20, 63, 91, 0.08);
+  text-align: center;
+}
+
+.festival-caption h2 {
+  margin: 0;
   background: linear-gradient(95deg, #0d527e 8%, #268eb0 52%, #9c702d 95%);
   background-clip: text;
-  color: #176c95;
-  font-size: clamp(18px, 2.15vw, 25px);
-  font-weight: 800;
-  line-height: 1.7;
-  text-align: center;
+  color: transparent;
+  font-family: 'Noto Serif Devanagari', 'Noto Sans Devanagari', serif;
+  font-size: clamp(33px, calc(4vw + 5px), 51px);
+  font-weight: 700;
+  line-height: 1.5;
   -webkit-text-fill-color: transparent;
+}
+
+.festival-caption p {
+  margin: 12px 0 0;
+  color: #315a73;
+  font-size: clamp(22px, calc(2vw + 5px), 27px);
+  font-weight: 500;
+  line-height: 1.8;
 }
 
 .festival-banner--closing {
@@ -357,7 +380,7 @@
 }
 
 .journey-image-slot {
-  order: 2;
+  order: 0;
   position: relative;
   display: grid;
   min-height: 248px;
@@ -835,18 +858,18 @@
   }
 
   .site-nav-brand {
-    font-size: 14px;
+    font-size: 19px;
   }
 
   .site-nav-links {
     justify-content: center;
-    gap: clamp(12px, 4vw, 20px);
+    gap: clamp(4px, 1.5vw, 8px);
     width: 100%;
   }
 
   .site-nav-links a {
     padding: 5px 0;
-    font-size: 12px;
+    font-size: 17px;
   }
 
   .festival-page {
@@ -858,8 +881,19 @@
   }
 
   .festival-caption {
-    margin: 17px 10px 14px;
-    font-size: clamp(15px, 4vw, 18px);
+    width: calc(100% - 24px);
+    margin: 17px auto 14px;
+    padding: 20px 14px;
+    border-radius: 18px;
+  }
+
+  .festival-caption h2 {
+    font-size: clamp(29px, calc(7vw + 5px), 39px);
+  }
+
+  .festival-caption p {
+    margin-top: 8px;
+    font-size: clamp(21px, calc(4.2vw + 5px), 23px);
   }
 
   .festival-banner--closing {

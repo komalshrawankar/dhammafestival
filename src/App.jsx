@@ -111,7 +111,7 @@ function App() {
       <img
         id="home"
         className="festival-banner festival-banner--hero"
-        src="/DHAMMA6.png"
+        src="/covermain.png"
         alt="धम्मा फेस्टिवल, नागपूर"
       />
 
@@ -121,7 +121,7 @@ function App() {
         aria-label="फेस्टिवलमधील कार्यक्रम"
       >
         <picture>
-          <source media="(max-width: 600px)" srcSet="/artistmobilenew.png" />
+          <source media="(max-width: 600px)" srcSet="/mobile.png" />
           <img
             className="lineup-banner"
             src="/cover4.png"
@@ -140,11 +140,10 @@ function App() {
         </div>
       </section>
 
-      <p className="festival-caption">
-        धम्मा फेस्टिवल २०२६ हे बुद्धोत्सवाचे बारावे वर्ष आहे.
-        <br />
-        कला, सेवा आणि सामाजिक एकतेचा हा प्रवास गेली १२ वर्षे अविरत सुरू आहे.
-      </p>
+      <section className="festival-caption" aria-label="धम्मा फेस्टिवलचा १२ वर्षांचा प्रवास">
+        <h2>धम्मा फेस्टिवल २०२६ हे बुद्धोत्सवाचे बारावे वर्ष आहे.</h2>
+        <p>कला, सेवा आणि सामाजिक एकतेचा हा प्रवास गेली १२ वर्षे अविरत सुरू आहे.</p>
+      </section>
 
       <img
         className="festival-banner festival-banner--closing"
