@@ -60,7 +60,7 @@ function App() {
     const endpoint = import.meta.env.VITE_GOOGLE_SHEETS_WEB_APP_URL
     if (!endpoint) {
       setFormMessage(
-        'Google Sheet जोडलेली नाही. .env.local फाइलमध्ये Apps Script URL जोडा.',
+        'Google Sheet जोडलेली नाही. Vercel Project Settings → Environment Variables मध्ये VITE_GOOGLE_SHEETS_WEB_APP_URL जोडा आणि पुन्हा deploy करा.',
       )
       return
     }
@@ -82,7 +82,7 @@ function App() {
         body: submission,
       })
       setFormMessage(
-        'अभिप्राय पाठवण्याची विनंती पाठवली आहे. Google Sheet मध्ये नोंद तपासा.',
+        'तुमचा अभिप्राय सबमिट झाला आहे. धन्यवाद!',
       )
       form.reset()
     } catch {
