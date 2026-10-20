@@ -113,6 +113,9 @@
 
 .event-poster {
   width: 100%;
+}
+
+.event-poster:not(:first-child) {
   height: 100%;
   aspect-ratio: 0.58;
   overflow: hidden;
@@ -122,7 +125,7 @@
 }
 
 .event-poster:first-child {
-  border-radius: 50px;
+  border-radius: 20px;
 }
 
 .festival-caption {
@@ -132,8 +135,16 @@
   border: 1px solid rgba(33, 111, 148, 0.14);
   border-radius: 24px;
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(220, 241, 248, 0.72), transparent 70%),
-    #f8fbfc;
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.13) 0,
+      rgba(255, 255, 255, 0.13) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    radial-gradient(ellipse at 100% 50%, rgba(65, 166, 226, 0.5), transparent 58%),
+    radial-gradient(ellipse at 0% 0%, rgba(197, 231, 250, 0.85), transparent 64%),
+    linear-gradient(125deg, #eff9ff 0%, #d9f0ff 48%, #eaf8ff 100%);
   box-shadow: 0 14px 36px rgba(20, 63, 91, 0.08);
   text-align: center;
 }
@@ -876,33 +887,31 @@
 }
 
 @media (max-width: 480px) {
-  .event-poster:first-child {
-    border-radius: 10px;
-  }
-
   .site-nav {
-    flex-direction: column;
-    gap: 4px;
-    padding: 7px 12px 8px;
+    gap: 8px;
+    padding: 6px 10px;
   }
 
   .site-nav-brand {
-    height: 40px;
+    height: 42px;
   }
 
   .site-nav-logo {
-    height: 90px;
+    height: 42px;
+    max-width: 48px;
   }
 
   .site-nav-links {
-    justify-content: center;
-    gap: clamp(4px, 1.5vw, 8px);
-    width: 100%;
+    flex: 1;
+    justify-content: space-between;
+    gap: 4px;
+    min-width: 0;
   }
 
   .site-nav-links a {
     padding: 5px 0;
-    font-size: 17px;
+    font-size: clamp(10px, 3.5vw, 13px);
+    white-space: nowrap;
   }
 
   .festival-page {
