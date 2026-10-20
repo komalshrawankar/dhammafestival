@@ -2,7 +2,7 @@
   width: 100%;
   margin: 0 auto;
   padding-bottom: 24px;
-  background: #fff;
+  background: transparent;
 }
 
 .site-nav {
@@ -16,7 +16,7 @@
   min-height: 64px;
   padding: 10px clamp(18px, 5vw, 72px);
   border-bottom: 1px solid rgba(45, 112, 148, 0.12);
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--festival-page-background);
   box-shadow: 0 5px 20px rgba(20, 63, 91, 0.07);
   backdrop-filter: blur(14px);
   font-family: Inter, 'Noto Sans Devanagari', sans-serif;
@@ -134,17 +134,7 @@
   padding: clamp(22px, 4vw, 38px) clamp(8px, 1.5vw, 20px);
   border: 1px solid rgba(33, 111, 148, 0.14);
   border-radius: 24px;
-  background:
-    repeating-linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.13) 0,
-      rgba(255, 255, 255, 0.13) 1px,
-      transparent 1px,
-      transparent 4px
-    ),
-    radial-gradient(ellipse at 100% 50%, rgba(65, 166, 226, 0.5), transparent 58%),
-    radial-gradient(ellipse at 0% 0%, rgba(197, 231, 250, 0.85), transparent 64%),
-    linear-gradient(125deg, #eff9ff 0%, #d9f0ff 48%, #eaf8ff 100%);
+  background: #fff;
   box-shadow: 0 14px 36px rgba(20, 63, 91, 0.08);
   text-align: center;
 }
@@ -185,11 +175,6 @@
   padding: clamp(52px, 8vw, 96px) 0 clamp(40px, 6vw, 72px);
   overflow: hidden;
   color: #19334d;
-  background-color: #cfe8f7;
-  background:
-    radial-gradient(ellipse at 8% 62%, rgba(247, 213, 164, 0.12), transparent 34%),
-    radial-gradient(ellipse at 92% 4%, rgba(75, 166, 211, 0.34), transparent 38%),
-    linear-gradient(145deg, #d8edf9 0%, #c5e2f3 52%, #d7ebf7 100%);
 }
 
 .journey-section::before {
