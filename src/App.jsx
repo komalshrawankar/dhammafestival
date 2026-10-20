@@ -98,7 +98,11 @@ function App() {
     <main className="festival-page">
       <nav className="site-nav" aria-label="मुख्य नेव्हिगेशन">
         <a className="site-nav-brand" href="#home">
-          धम्मा फेस्टिवल <span>२०२६</span>
+          <img
+            className="site-nav-logo"
+            src="/logo.png"
+            alt="धम्मा फेस्टिवल"
+          />
         </a>
         <div className="site-nav-links">
           <a href="#home">Home</a>
@@ -208,6 +212,11 @@ function App() {
         <blockquote className="journey-quote">
           <span aria-hidden="true">“</span>
           <p>कलेतून समतेचा संदेश, संस्कृतीतून एकतेचा ध्यास…</p>
+          <div className="journey-logos" aria-label="उत्सवाशी संबंधित संस्था">
+            <img src="/new1.png" alt="संस्थेचा लोगो १" />
+            <img src="/new2.png" alt="संस्थेचा लोगो २" />
+            <img src="/new3.png" alt="संस्थेचा लोगो ३" />
+          </div>
         </blockquote>
       </section>
 
@@ -293,7 +302,11 @@ function App() {
         <div className="footer-main">
           <div className="footer-brand">
             <p className="footer-eyebrow">आयोजक</p>
-            <h2>धम्मा फेस्टिवल</h2>
+            <img
+              className="footer-logo"
+              src="/logo.png"
+              alt="धम्मा फेस्टिवल"
+            />
             <p>
               कला, सेवा आणि सामाजिक एकतेचा उत्सव.
               <br />

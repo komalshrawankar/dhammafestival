@@ -23,15 +23,19 @@
 }
 
 .site-nav-brand {
-  color: #123b5a;
-  font-size: 21px;
-  font-weight: 800;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
   text-decoration: none;
   white-space: nowrap;
 }
 
-.site-nav-brand span {
-  color: #1683b5;
+.site-nav-logo {
+  display: block;
+  width: auto;
+  height: 98px;
+  max-width: 190px;
+  object-fit: contain;
 }
 
 .site-nav-links {
@@ -119,13 +123,12 @@
 
 .event-poster:first-child {
   border-radius: 50px;
-  object-position: left center;
 }
 
 .festival-caption {
-  width: min(100% - 40px, 1000px);
+  width: min(100% - 24px, 1600px);
   margin: clamp(22px, 3vw, 36px) auto clamp(18px, 2.5vw, 28px);
-  padding: clamp(22px, 4vw, 38px) clamp(18px, 4vw, 42px);
+  padding: clamp(22px, 4vw, 38px) clamp(8px, 1.5vw, 20px);
   border: 1px solid rgba(33, 111, 148, 0.14);
   border-radius: 24px;
   background:
@@ -141,10 +144,16 @@
   background-clip: text;
   color: transparent;
   font-family: 'Noto Serif Devanagari', 'Noto Sans Devanagari', serif;
-  font-size: clamp(33px, calc(4vw + 5px), 51px);
+  font-size: clamp(31px, calc(4vw + 3px), 49px);
   font-weight: 700;
   line-height: 1.5;
   -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 768px) {
+  .festival-caption h2 {
+    white-space: nowrap;
+  }
 }
 
 .festival-caption p {
@@ -318,7 +327,7 @@
   margin: 0;
   padding-top: 2px;
   color: #75b5d7;
-  font-size: clamp(28px, 4vw, 42px);
+  font-size: clamp(31px, calc(4vw + 3px), 45px);
   font-weight: 300;
   letter-spacing: -0.07em;
   line-height: 1;
@@ -343,7 +352,7 @@
 .journey-kicker {
   margin: 0 0 8px;
   color: #4384a8;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.11em;
 }
@@ -351,7 +360,7 @@
 .journey-copy h2 {
   margin: 0 0 14px;
   color: #153954;
-  font-size: clamp(20px, 2.5vw, 28px);
+  font-size: clamp(23px, calc(2.5vw + 3px), 31px);
   font-weight: 700;
   line-height: 1.4;
 }
@@ -360,7 +369,7 @@
 .journey-highlight,
 .journey-text {
   margin: 0;
-  font-size: clamp(14px, 1.4vw, 16px);
+  font-size: clamp(17px, calc(1.4vw + 3px), 19px);
   line-height: 1.85;
 }
 
@@ -461,6 +470,24 @@
   font-size: clamp(16px, 2.5vw, 21px);
   font-weight: 600;
   letter-spacing: 0.01em;
+}
+
+.journey-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 4vw, 48px);
+  width: min(100%, 720px);
+  margin: 24px auto 0;
+}
+
+.journey-logos img {
+  width: min(25vw, 150px);
+  height: 140px;
+  padding: 8px;
+  border-radius: 12px;
+  background: #fff;
+  object-fit: contain;
 }
 
 .feedback-section {
@@ -740,10 +767,12 @@
   letter-spacing: 0.13em;
 }
 
-.footer-brand h2 {
+.footer-logo {
+  display: block;
+  width: min(100%, 200px);
+  height: auto;
   margin: 0 0 14px;
-  color: #fff;
-  font-size: clamp(22px, 3vw, 29px);
+  border-radius: 8px;
 }
 
 .footer-brand > p:last-child {
@@ -858,7 +887,11 @@
   }
 
   .site-nav-brand {
-    font-size: 19px;
+    height: 40px;
+  }
+
+  .site-nav-logo {
+    height: 90px;
   }
 
   .site-nav-links {
@@ -883,12 +916,12 @@
   .festival-caption {
     width: calc(100% - 24px);
     margin: 17px auto 14px;
-    padding: 20px 14px;
+    padding: 20px 8px;
     border-radius: 18px;
   }
 
   .festival-caption h2 {
-    font-size: clamp(29px, calc(7vw + 5px), 39px);
+    font-size: clamp(27px, calc(7vw + 3px), 37px);
   }
 
   .festival-caption p {
@@ -947,7 +980,7 @@
   }
 
   .journey-number {
-    font-size: 32px;
+    font-size: 35px;
   }
 
   .journey-number::after {
@@ -957,18 +990,18 @@
 
   .journey-copy h2 {
     margin-bottom: 10px;
-    font-size: 19px;
+    font-size: 22px;
     line-height: 1.4;
   }
 
   .journey-kicker {
-    font-size: 9px;
+    font-size: 12px;
   }
 
   .journey-preface,
   .journey-highlight,
   .journey-text {
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.75;
   }
 
@@ -979,6 +1012,17 @@
 
   .journey-quote > span {
     font-size: 40px;
+  }
+
+  .journey-logos {
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .journey-logos img {
+    width: calc((100% - 16px) / 3);
+    height: 100px;
+    padding: 5px;
   }
 
   .feedback-section {
