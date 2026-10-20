@@ -2,11 +2,11 @@ import { useState } from 'react'
 import './App.css'
 
 const eventPosters = [
-  { src: '/1.png', alt: 'Dhamma Festival event poster' },
-  { src: '/2.png', alt: 'Dhamma Festival event poster' },
-  { src: '/DHAMMA3.png', alt: 'Dhamma Festival event poster' },
-  { src: '/DHAMMA2.png', alt: 'Dhamma Festival event poster' },
-  { src: '/DHAMMA.png', alt: 'Dhamma Festival event poster' },
+  { src: '/card1.png', alt: 'Dhamma Festival event poster' },
+  { src: '/card2.png', alt: 'Dhamma Festival event poster' },
+  { src: '/card3.png', alt: 'Dhamma Festival event poster' },
+  { src: '/card4.png', alt: 'Dhamma Festival event poster' },
+  { src: '/card5.png', alt: 'Dhamma Festival event poster' },
 ]
 
 const journeyItems = [
@@ -14,7 +14,7 @@ const journeyItems = [
     title: '१२ वर्षांचा प्रवास',
     highlight: 'धम्मा फेस्टिवल २०२६ हे या उत्सवाचे बारावे वर्ष आहे.',
     text: 'कला, सेवा आणि सामाजिक एकतेचा हा प्रवास गेली १२ वर्षे अविरत सुरू आहे.',
-    image: '/journey-images/journey-01.png',
+    image: '/1sec.png',
     alt: 'धम्मा फेस्टिवलचा निळा उत्सवी देखावा',
   },
   {
@@ -22,28 +22,28 @@ const journeyItems = [
     preface: 'दीक्षाभूमीवर येणाऱ्या धम्म अनुयायांची गैरसोय होऊ नये, यासाठी',
     highlight: 'धम्मा फेस्टिवल गेली १२ वर्षे सेवाभावी कार्य करत आहे.',
     text: 'धम्म अनुयायांसाठी सुविधा आणि आपुलकीचे वातावरण निर्माण करणे हे आमचे ध्येय आहे.',
-    image: '/journey-images/journey-02.png',
+    image: '/2sec.png',
     alt: 'उत्सवाच्या प्रकाशात न्हालेला स्तूप',
   },
   {
     title: 'कलावंतांचा, लोकांसाठीचा उत्सव',
     highlight: 'कलावंतांनी कलावंतांसाठी नव्हे, तर समाजासाठी उभा केलेला हा एक अनोखा उत्सव आहे.',
     text: 'कलेच्या माध्यमातून समाजाला जोडणारा धम्मा फेस्टिवल हा एक वेगळा सांस्कृतिक मंच आहे.',
-    image: '/journey-images/journey-03.png',
+    image: '/3sec.jpg.jpeg',
     alt: 'फेस्टिवलमधील कलावंत आणि कार्यक्रम',
   },
   {
     title: 'विविधतेतून कलेचा उत्सव',
     highlight: 'विविध जाती-धर्म आणि समुदायातील कलावंत एकाच मंचावर येऊन आपल्या कलेचे सादरीकरण करतात.',
     text: 'कलेच्या माध्यमातून विविधतेचा सन्मान आणि सामाजिक एकतेचा संदेश दिला जातो.',
-    image: '/journey-images/journey-04.png',
+    image: '/4sec.jpg.jpeg',
     alt: 'धम्मा फेस्टिवलमधील सांस्कृतिक सादरीकरण',
   },
   {
     title: 'कलेची नवी पिढी घडविण्याचा संकल्प',
     highlight: 'समाजातून कलेची एक नवी आणि सक्षम पिढी तयार व्हावी, हा धम्मा फेस्टिवलचा मुख्य उद्देश आहे.',
     text: 'नवोदित कलावंतांना व्यासपीठ, संधी आणि प्रोत्साहन देण्याचा आमचा प्रयत्न आहे.',
-    image: '/journey-images/journey-05.png',
+    image: '/5sec.jpg.jpeg',
     alt: 'धम्मा फेस्टिवलमधील कलाकार',
   },
 ]
@@ -96,18 +96,35 @@ function App() {
 
   return (
     <main className="festival-page">
+      <nav className="site-nav" aria-label="मुख्य नेव्हिगेशन">
+        <a className="site-nav-brand" href="#home">
+          धम्मा फेस्टिवल <span>२०२६</span>
+        </a>
+        <div className="site-nav-links">
+          <a href="#home">Home</a>
+          <a href="#events">Events</a>
+          <a href="#performances">Performances</a>
+          <a href="#footer">Contact</a>
+        </div>
+      </nav>
+
       <img
+        id="home"
         className="festival-banner festival-banner--hero"
         src="/DHAMMA6.png"
         alt="धम्मा फेस्टिवल, नागपूर"
       />
 
-      <section className="event-lineup" aria-label="फेस्टिवलमधील कार्यक्रम">
+      <section
+        id="events"
+        className="event-lineup"
+        aria-label="फेस्टिवलमधील कार्यक्रम"
+      >
         <picture>
-          <source media="(max-width: 600px)" srcSet="/artistmobile.png" />
+          <source media="(max-width: 600px)" srcSet="/artistmobilenew.png" />
           <img
             className="lineup-banner"
-            src="/artist.png"
+            src="/cover4.png"
             alt="धम्मा फेस्टिवलचे कार्यक्रम आणि कलावंत"
           />
         </picture>
@@ -131,11 +148,15 @@ function App() {
 
       <img
         className="festival-banner festival-banner--closing"
-        src="/dhamma7.png"
+        src="/cover.png"
         alt="धम्मा फेस्टिवल २०२६ — कला, लोकसहभाग, समता आणि समाज"
       />
 
-      <section className="journey-section" aria-labelledby="journey-title">
+      <section
+        id="performances"
+        className="journey-section"
+        aria-labelledby="journey-title"
+      >
         <header className="journey-header">
           <p className="journey-eyebrow">आमचा प्रवास · आमची ओळख</p>
           <h1 id="journey-title">
@@ -269,7 +290,7 @@ function App() {
         </div>
       </section>
 
-      <footer className="site-footer">
+      <footer id="footer" className="site-footer">
         <div className="footer-main">
           <div className="footer-brand">
             <p className="footer-eyebrow">आयोजक</p>
@@ -285,7 +306,9 @@ function App() {
             <h3>संपर्क माहिती</h3>
             <a className="footer-contact-item" href="tel:+919272370920">
               <span className="footer-contact-icon" aria-hidden="true">
-                फोन
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M6.6 3.8 9.2 3.2l2 4.7-2 1.5a14.3 14.3 0 0 0 5.4 5.4l1.5-2 4.7 2-.6 2.6a2.7 2.7 0 0 1-2.9 2.1A16.8 16.8 0 0 1 4.5 6.7a2.7 2.7 0 0 1 2.1-2.9Z" />
+                </svg>
               </span>
               <span>
                 <small>फोन</small>

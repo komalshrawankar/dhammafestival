@@ -5,6 +5,78 @@
   background: #fff;
 }
 
+.site-nav {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 64px;
+  padding: 10px clamp(18px, 5vw, 72px);
+  border-bottom: 1px solid rgba(45, 112, 148, 0.12);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 5px 20px rgba(20, 63, 91, 0.07);
+  backdrop-filter: blur(14px);
+}
+
+.site-nav-brand {
+  color: #123b5a;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-nav-brand span {
+  color: #1683b5;
+}
+
+.site-nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.8vw, 36px);
+}
+
+.site-nav-links a {
+  position: relative;
+  padding: 9px 0;
+  color: #315a73;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.site-nav-links a::after {
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+  left: 0;
+  height: 2px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #1675ae, #69c6d9);
+  content: '';
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 160ms ease;
+}
+
+.site-nav-links a:hover,
+.site-nav-links a:focus-visible {
+  color: #0e78a8;
+}
+
+.site-nav-links a:hover::after,
+.site-nav-links a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.festival-page [id] {
+  scroll-margin-top: 76px;
+}
+
 .festival-banner,
 .lineup-banner,
 .event-poster {
@@ -17,6 +89,7 @@
 }
 
 .event-lineup {
+  margin-top: clamp(14px, 2vw, 24px);
   padding: 0 2.5%;
 }
 
@@ -29,20 +102,34 @@
 .poster-row {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  align-items: start;
+  align-items: stretch;
   width: 100%;
 }
 
 .event-poster {
   width: 100%;
+  height: 100%;
+  aspect-ratio: 0.58;
+  overflow: hidden;
+  border-radius: clamp(8px, 1.2vw, 16px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.event-poster:first-child {
+  border-radius: 50px;
 }
 
 .festival-caption {
-  margin: 20px 12px 12px;
-  color: #111;
-  font-size: clamp(12px, 1.4vw, 16px);
-  line-height: 1.5;
+  margin: clamp(22px, 3vw, 36px) 16px clamp(18px, 2.5vw, 28px);
+  background: linear-gradient(95deg, #0d527e 8%, #268eb0 52%, #9c702d 95%);
+  background-clip: text;
+  color: #176c95;
+  font-size: clamp(18px, 2.15vw, 25px);
+  font-weight: 800;
+  line-height: 1.7;
   text-align: center;
+  -webkit-text-fill-color: transparent;
 }
 
 .festival-banner--closing {
@@ -55,9 +142,26 @@
   padding: clamp(52px, 8vw, 96px) 0 clamp(40px, 6vw, 72px);
   overflow: hidden;
   color: #19334d;
+  background-color: #cfe8f7;
   background:
-    radial-gradient(ellipse at 90% 0%, rgba(203, 231, 250, 0.54), transparent 36%),
-    linear-gradient(180deg, #f4f9fd 0%, #eaf4fb 100%);
+    radial-gradient(ellipse at 8% 62%, rgba(247, 213, 164, 0.12), transparent 34%),
+    radial-gradient(ellipse at 92% 4%, rgba(75, 166, 211, 0.34), transparent 38%),
+    linear-gradient(145deg, #d8edf9 0%, #c5e2f3 52%, #d7ebf7 100%);
+}
+
+.journey-section::before {
+  position: absolute;
+  top: 18%;
+  right: -115px;
+  width: 260px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(27, 123, 162, 0.12);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 22px rgba(27, 123, 162, 0.035),
+    0 0 0 46px rgba(27, 123, 162, 0.025);
+  content: '';
+  pointer-events: none;
 }
 
 .journey-header {
@@ -78,7 +182,7 @@
   height: 3px;
   margin-top: 22px;
   border-radius: 99px;
-  background: linear-gradient(90deg, #1675ae, #82c5e8);
+  background: linear-gradient(90deg, #1675ae, #82c5e8, #e1ad59);
   content: '';
 }
 
@@ -129,19 +233,38 @@
   grid-template-columns: minmax(250px, 36%) minmax(0, 1fr);
   min-height: 248px;
   overflow: hidden;
-  border: 1px solid rgba(42, 104, 145, 0.12);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(42, 104, 145, 0.15);
+  border-radius: 20px;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.98), rgba(248, 252, 254, 0.96));
   box-shadow:
-    0 16px 42px rgba(23, 66, 97, 0.08),
+    0 18px 44px rgba(23, 66, 97, 0.09),
     0 2px 8px rgba(23, 66, 97, 0.04);
   transition:
-    transform 180ms ease,
-    box-shadow 180ms ease;
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+  animation: journey-arrive 650ms both;
+}
+
+.journey-item:nth-child(2) {
+  animation-delay: 70ms;
+}
+
+.journey-item:nth-child(3) {
+  animation-delay: 140ms;
+}
+
+.journey-item:nth-child(4) {
+  animation-delay: 210ms;
+}
+
+.journey-item:nth-child(5) {
+  animation-delay: 280ms;
 }
 
 .journey-item:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
+  border-color: rgba(42, 131, 170, 0.3);
   box-shadow:
     0 22px 52px rgba(23, 66, 97, 0.12),
     0 4px 12px rgba(23, 66, 97, 0.06);
@@ -243,7 +366,7 @@
   background:
     radial-gradient(circle at 72% 28%, rgba(255, 255, 255, 0.45) 0 2px, transparent 3px),
     radial-gradient(circle at 26% 72%, rgba(255, 255, 255, 0.25) 0 2px, transparent 3px),
-    linear-gradient(145deg, #dceef8, #a9d4eb 52%, #6eb1d4);
+    linear-gradient(145deg, #e0f2f8, #addcec 52%, #71b7d7);
 }
 
 .journey-image-placeholder {
@@ -270,7 +393,9 @@
 }
 
 .journey-item:first-child .journey-image {
-  object-position: center 62%;
+  object-fit: contain;
+  object-position: center;
+  background: linear-gradient(145deg, #e0f2f8, #addcec 52%, #71b7d7);
 }
 
 .journey-item:nth-child(2) .journey-image {
@@ -321,6 +446,8 @@
   padding: clamp(52px, 8vw, 96px) 16px;
   overflow: hidden;
   background:
+    linear-gradient(125deg, rgba(5, 34, 58, 0.83), rgba(10, 74, 109, 0.69)),
+    url('/registerbg.png') center 48% / cover no-repeat,
     radial-gradient(ellipse at 12% 24%, rgba(82, 176, 221, 0.25), transparent 32%),
     radial-gradient(ellipse at 92% 84%, rgba(33, 112, 173, 0.25), transparent 35%),
     linear-gradient(135deg, #092b4a 0%, #0d527e 52%, #1179a6 100%);
@@ -359,13 +486,13 @@
   width: min(100%, 680px);
   margin: 0 auto;
   padding: clamp(26px, 5.5vw, 52px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.48);
   border-radius: 24px;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(244, 250, 254, 0.98));
+  background: linear-gradient(145deg, rgba(248, 253, 255, 0.83), rgba(229, 244, 251, 0.76));
   box-shadow:
     0 28px 80px rgba(1, 24, 43, 0.28),
     0 4px 14px rgba(3, 34, 57, 0.12);
+  backdrop-filter: blur(18px);
 }
 
 .feedback-card::before {
@@ -598,15 +725,15 @@
 
 .footer-brand > p:last-child {
   color: #c0d5e2;
-  font-size: 13px;
-  line-height: 1.9;
+  font-size: 15px;
+  line-height: 2;
 }
 
 .footer-contact h3,
 .footer-address h3 {
   margin: 0 0 18px;
   color: #fff;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .footer-contact {
@@ -647,6 +774,16 @@
   font-weight: 700;
 }
 
+.footer-contact-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
 .footer-contact-item > span:last-child {
   display: grid;
   gap: 3px;
@@ -660,14 +797,14 @@
 
 .footer-contact-item strong {
   overflow-wrap: anywhere;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   transition: color 150ms ease;
 }
 
 .footer-address address {
   color: #c0d5e2;
-  font-size: 13px;
+  font-size: 15px;
   font-style: normal;
   line-height: 1.9;
 }
@@ -679,7 +816,7 @@
   padding: 16px clamp(22px, 6vw, 76px);
   border-top: 1px solid rgba(200, 229, 242, 0.14);
   color: #9db8c8;
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .footer-bottom p {
@@ -687,6 +824,31 @@
 }
 
 @media (max-width: 480px) {
+  .event-poster:first-child {
+    border-radius: 10px;
+  }
+
+  .site-nav {
+    flex-direction: column;
+    gap: 4px;
+    padding: 7px 12px 8px;
+  }
+
+  .site-nav-brand {
+    font-size: 14px;
+  }
+
+  .site-nav-links {
+    justify-content: center;
+    gap: clamp(12px, 4vw, 20px);
+    width: 100%;
+  }
+
+  .site-nav-links a {
+    padding: 5px 0;
+    font-size: 12px;
+  }
+
   .festival-page {
     padding-bottom: 16px;
   }
@@ -696,8 +858,8 @@
   }
 
   .festival-caption {
-    margin: 16px 10px 10px;
-    font-size: 12px;
+    margin: 17px 10px 14px;
+    font-size: clamp(15px, 4vw, 18px);
   }
 
   .festival-banner--closing {
@@ -722,6 +884,10 @@
     grid-template-columns: minmax(0, 1fr);
     min-height: 0;
     border-radius: 15px;
+  }
+
+  .journey-item {
+    animation-delay: 0ms;
   }
 
   .journey-image-slot,
@@ -824,5 +990,27 @@
     flex-direction: column;
     gap: 6px;
     padding: 14px 22px;
+  }
+}
+
+@keyframes journey-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
