@@ -20,11 +20,11 @@ Currently, two official plugins are available:
    VITE_GOOGLE_SHEETS_WEB_APP_URL=https://script.google.com/macros/s/तुमचा_DEPLOYMENT_ID/exec
    ```
 
-7. Vite सर्व्हर पुन्हा सुरू करा (`npm run dev`). फॉर्म भरून पाठवल्यानंतर Sheet मध्ये `अभिप्राय` नावाचा टॅब तयार होईल आणि नवीन नोंद त्यात दिसेल.
+7. Vite सर्व्हर पुन्हा सुरू करा (`npm run dev`). फॉर्म सबमिट केल्यानंतर `अभिप्राय` नावाचा टॅब तयार होऊन नवीन नोंद त्यात दिसली पाहिजे. ब्राउझर Google Apps Script चा `no-cors` प्रतिसाद वाचू शकत नसल्यामुळे पेज नोंद जतन झाल्याची खात्री देऊ शकत नाही; Sheet मध्ये नोंद तपासा.
 
 Apps Script नाव, दहा अंकी मोबाईल क्रमांक, होय/नाही उत्तर आणि अभिप्राय तपासतो. मोबाईल क्रमांक गोळा करण्यापूर्वी तुमच्या गोपनीयता धोरणात याचा उल्लेख करा.
 
-`.env.local` मध्ये URL जोडल्यानंतरही फॉर्म जोडला नसेल तर Apps Script मध्ये नवीन deployment तयार करून नवीन `/exec` URL `.env.local` मध्ये ठेवा.
+Sheet मध्ये नोंद दिसत नसेल तर Apps Script च्या **Executions** मध्ये `doPost` चालले का आणि त्यात त्रुटी आली का ते तपासा. Apps Script कोड बदलल्यानंतर **Deploy → Manage deployments → Edit → New version → Deploy** करून चालू deployment अपडेट करा; केवळ कोड सेव्ह केल्याने आधीचा `/exec` deployment बदलत नाही. URL `.env.local` मधील `/exec` deployment शी जुळतो आणि Web app चे access `Anyone` आहे याची खात्री करा. Vercel वर प्रकाशित साइटसाठी **Settings → Environment Variables** मधील URL देखील तपासा आणि बदलानंतर पुन्हा deploy करा.
 
 ## Vercel वर प्रकाशित करणे
 
