@@ -82,7 +82,7 @@ function App() {
         body: submission,
       })
       setFormMessage(
-        'तुमची विनंती पाठवली आहे; Google Sheet मध्ये नोंद झाल्याची पुष्टी मिळाली नाही. कृपया Sheet तपासा. नोंद नसेल तर deployment तपासून पुन्हा प्रयत्न करा.',
+        'तुमचा फॉर्म सबमिट झाला आहे. धन्यवाद!',
       )
     } catch {
       setFormMessage(
